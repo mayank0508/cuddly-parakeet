@@ -7,7 +7,7 @@ const MenuItem = ({ title, imageUrl, size }) => (
     style={{
       backgroundImage: `url(${imageUrl})`
     }}
-    className={`${size} menu-item`}
+    className={`${size} menu-item`} // this is the wau we declare the imageUrl in the homepage
   >
     <div className="content">
       <h1 className="title">{title}</h1>
