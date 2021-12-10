@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Homepage from './pages/homepage/homepage.component';
 
@@ -12,10 +12,10 @@ const HatsApp = () => (
 function App() {
   return (
     <div>
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route exact path="/hats" component={HatsApp} />
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/hats" element={<HatsApp />} />
+      </Routes>
     </div>
   );
 }
