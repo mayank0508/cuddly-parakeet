@@ -9,6 +9,21 @@
   margin: 0 7.4px 15px;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+
+
+  &:hover {   // this is the particular code that makes the picture look englared when mouse is hovering
+    cursor: pointer; 
+
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+
+    & .content {
+      opacity: 0.9;
+    }
+  }
 
   &.large {
     height: 380px;
