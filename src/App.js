@@ -12,6 +12,8 @@ const HatsApp = () => (
 function App() {
   return (
     <div>
+      {/* <Link to="/">Homepage</Link>
+      <Link to="/hats">HatsApp/</Link> */}
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/hats" element={<HatsApp />} />
