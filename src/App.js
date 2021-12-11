@@ -2,12 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Homepage from './pages/homepage/homepage.component';
-
-const HatsApp = () => (
-  <div>
-    <h1>HATS APP</h1>
-  </div>
-);
+import ShopPage from './pages/shop/shop.componet.jsx';
 
 function App() {
   return (
@@ -16,7 +11,7 @@ function App() {
       <Link to="/hats">HatsApp/</Link> */}
       <Routes>
         <Route exact path="/" element={<Homepage />} />
-        <Route exact path="/hats" element={<HatsApp />} />
+        <Route exact path="/shop" element={<ShopPage />} />
       </Routes>
     </div>
   );
