@@ -268,15 +268,15 @@ const SHOP_DATA = [
       {
         id: 34,
         name: 'Jean Long Sleeve',
-        // imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
-        imageUrl: '/images/shop-img/mens/roll-up-jean-shirt.png',
+        imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
+        //imageUrl: '/images/shop-img/mens/roll-up-jean-shirt.png',
         price: 40
       },
       {
         id: 35,
         name: 'Burgundy T-shirt',
-        // imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
-        imageUrl: '/images/shop-img/mens/polka-dot-shirt.png',
+        imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+        //imageUrl: '/images/shop-img/mens/polka-dot-shirt.png',
         price: 25
       }
     ]
