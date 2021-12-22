@@ -1,4 +1,5 @@
 import React from 'react';
+import FormInput from '../form-input/form-input.component';
 
 import './sign-in.styles.scss';
 
@@ -31,22 +32,22 @@ class SignIn extends React.Component {
         <span>Sign with your real email id and password</span>
 
         <form onSubmit={this.handleSubmit}>
-          <input
+          <FormInput
             name="email"
             type="email"
             value={this.state.email}
-            onChange={this.handleChange}
+            label="Email" // this is the hover transition
+            handleChange={this.handleChange}
             required
           />
-          <label>Email</label>
-          <input
+          <FormInput
             name="password"
             type="password"
-            value={this.state.password} // here onChange={this.handleChange} is that the moment the submit button is clicked what appears !
-            onChange={this.handleChange}
+            label="Password" // this is the hover transition
+            value={this.state.password} // here handleChange={this.handleChange} is that the moment the submit button is clicked what appears !
+            handleChange={this.handleChange}
             required
           />
-          <label>Email</label>
           <input type="submit" value="Subit Form" />
         </form>
       </div>
