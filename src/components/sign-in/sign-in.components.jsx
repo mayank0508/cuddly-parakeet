@@ -34,6 +34,7 @@ class SignIn extends React.Component {
           <input
             name="email"
             type="email"
+            value={this.state.email}
             onChange={this.handleChange}
             required
           />
@@ -41,8 +42,8 @@ class SignIn extends React.Component {
           <input
             name="password"
             type="password"
-            value={this.state.password} // here value={this.state.password} and onChange={this.handleChange} are kinda doing the same thing
-            onChange={this.handleChange} // the only diffrence is that the one in the bottom is using a function to add the values dynamically
+            value={this.state.password} // here onChange={this.handleChange} is that the moment the submit button is clicked what appears !
+            onChange={this.handleChange}
             required
           />
           <label>Email</label>
@@ -52,6 +53,5 @@ class SignIn extends React.Component {
     );
   }
 }
-
 
 export default SignIn;
