@@ -38,16 +38,16 @@ class SignIn extends React.Component {
             name="email"
             type="email"
             value={this.state.email}
-            label="Email" // this is the hover transition
             handleChange={this.handleChange}
+            label="Email" // this is the hover transition
             required
           />
           <FormInput
             name="password"
             type="password"
-            label="Password" // this is the hover transition
-            value={this.state.password} // here handleChange={this.handleChange} is that the moment the submit button is clicked what appears !
+            value={this.state.email} // here handleChange={this.handleChange} is that the moment the submit button is clicked what appears !
             handleChange={this.handleChange}
+            label="Password" // this is the hover transition
             required
           />
           <CustomButton type="submit">Sign IN 👍</CustomButton>
