@@ -40,7 +40,7 @@ class SignIn extends React.Component {
             value={this.state.email}
             handleChange={this.handleChange}
             label="Email" // this is the hover transition
-            required
+            //required
           />
           <FormInput
             name="password"
@@ -48,7 +48,7 @@ class SignIn extends React.Component {
             value={this.state.email} // here handleChange={this.handleChange} is that the moment the submit button is clicked what appears !
             handleChange={this.handleChange}
             label="Password" // this is the hover transition
-            required
+            //required
           />
           <CustomButton type="submit">Sign IN 👍</CustomButton>
           <CustomButton onClick={signInWithGoogle}>{''}Google</CustomButton>

@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app'; // this is used to import firebase
 import 'firebase/compat/firestore'; // but we need to import firebase in the first line that gives us the ability to do these two functions
 import 'firebase/compat/auth';
 
-const config = {
+const firebaseConfig = {
   // this code snippet is copied from the firebase website at register app page
   apiKey: 'AIzaSyDry_3TIDD8Y-MojvaqbVCTIWrmhHwzPl4',
   authDomain: 'crwn-db-b5be5.firebaseapp.com',
@@ -12,7 +12,7 @@ const config = {
   appId: '1:918888525031:web:c8aeb189068519f598c642'
 };
 
-firebase.initializeApp(config); // this code will make for configurring the app
+firebase.initializeApp(firebaseConfig); // this code will make for configurring the app
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore(); // here we have exported both the firestore and the auth
