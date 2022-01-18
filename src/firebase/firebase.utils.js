@@ -15,7 +15,7 @@ const config = {
 firebase.initializeApp(config); // this code will make for configurring the app
 
 export const auth = firebase.auth();
-export const firestore = firebase.firestore(); // here we have not exported both the firestore and the auth
+export const firestore = firebase.firestore(); // here we have exported both the firestore and the auth
 
 const provider = new firebase.auth.GoogleAuthProvider(); // this gives us the access to the google auth provider
 provider.setCustomParameters({ prompt: 'select_account' }); // this sets the prompt to 'select_account'
