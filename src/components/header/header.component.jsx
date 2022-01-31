@@ -6,7 +6,9 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss';
 
-const Header = ({ currentUser }) => (
+const Header = (
+  { currentUser } // here we have destructured the current user so that we can use it in sign in and sign out
+) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -23,7 +25,7 @@ const Header = ({ currentUser }) => (
           SIGN OUT
         </div>
       ) : (
-        <Link className="option" to="/signin"></Link>
+        <Link className="option" to="/signin">SIGN IN</Link>
       )}
     </div>
   </div>
