@@ -20,12 +20,14 @@ const Header = (
       <Link className="option" to="/shop">
         CONTACT
       </Link>
-      {currentUser ? (
+      {currentUser ? ( // here we have used the ternary operator to get the current user tp sign in or sign out
         <div className="option" onClick={() => auth.signOut()}>
           SIGN OUT
         </div>
       ) : (
-        <Link className="option" to="/signin">SIGN IN</Link>
+        <Link className="option" to="/signin">
+          SIGN IN
+        </Link>
       )}
     </div>
   </div>
