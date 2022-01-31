@@ -17,13 +17,21 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() { // this is a very cool firebase function which allows user to stay loged in until they are logged out
+  unsubscribeFromAuth = null; // this is used to unsubscribe
+
+  componentDidMount() {
+    // this is a very cool firebase function which allows user to stay loged in until they are logged out
     auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
 
       console.log(user.displayName);
       console.log(user.email);
     });
+  }
+
+  componentWillUnmount() {
+    // this is called for logging out form the suscribed state
+    this.unsubscribeFromAuth();
   }
 
   render() {
