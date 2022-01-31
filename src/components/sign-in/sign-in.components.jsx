@@ -50,12 +50,14 @@ class SignIn extends React.Component {
             label="Password" // this is the hover transition
             //required
           />
-          <CustomButton type="submit">Sign IN 👍</CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-            {' '}
-            {/*  here the isGoogleSignIn is used to pass the stykes ans the of the sign in button for google auth as well as the destructuring we did on the custon buttons */}
-            Google
-          </CustomButton>
+          <div className="buttons">
+            <CustomButton type="submit">Sign IN 👍</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+              {' '}
+              {/*  here the isGoogleSignIn is used to pass the stykes ans the of the sign in button for google auth as well as the destructuring we did on the custon buttons */}
+              Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );
