@@ -13,8 +13,6 @@ class ShopPage extends React.Component {
   }
 
 
-
-  
   render() {
     const { collections } = this.state;
     return (
