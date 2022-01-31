@@ -24,8 +24,7 @@ class App extends React.Component {
     auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
 
-      console.log(user.displayName);
-      console.log(user.email);
+      console.log(user);
     });
   }
 
@@ -39,7 +38,8 @@ class App extends React.Component {
       <div>
         {/* <Link to="/">Homepage</Link>
       <Link to="/hats">HatsApp/</Link> */}
-        <Header />
+        <Header currentUser={this.state.currentUser} />{' '}
+        {/* here we are passing the current user in the header */}
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route exact path="/shop" element={<ShopPage />} />
