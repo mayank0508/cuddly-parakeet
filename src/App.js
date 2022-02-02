@@ -21,8 +21,9 @@ class App extends React.Component {
 
   componentDidMount() {
     // this is a very cool firebase function which allows user to stay loged in until they are logged out
-    auth.onAuthStateChanged(async user => {
-      createUserProfileDoc(user)
+    // auth.onAuthStateChanged(async user => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDoc(user);
       // this.setState({ currentUser: user });
 
       //console.log(user);

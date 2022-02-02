@@ -15,7 +15,7 @@ const firebaseConfig = {
 export const createUserProfileDoc = async (userAuth, additionData) => {
   if (!userAuth) return;
 
-  console.log(firestore.doc('users/24526tfadgt'));
+  console.log(firestore.doc('users/24526tfadgt1'));
 };
 
 firebase.initializeApp(firebaseConfig); // this code will make for configurring the app
