@@ -5,7 +5,7 @@ import Homepage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.componet.jsx';
 import Header from './components/header/header.component.jsx';
 import SignINandSignUP from './pages/sign-in-and-signup/sign-in-and-signup.component.jsx';
-import { auth } from './firebase/firebase.utils'; // we are importing auth from firebase to make the web ui know that we are logged in
+import { auth, createUserProfileDoc } from './firebase/firebase.utils'; // we are importing auth from firebase to make the web ui know that we are logged in
 
 class App extends React.Component {
   constructor() {
@@ -21,10 +21,11 @@ class App extends React.Component {
 
   componentDidMount() {
     // this is a very cool firebase function which allows user to stay loged in until they are logged out
-    auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    auth.onAuthStateChanged(async user => {
+      createUserProfileDoc(user)
+      // this.setState({ currentUser: user });
 
-      console.log(user);
+      //console.log(user);
     });
   }
 
