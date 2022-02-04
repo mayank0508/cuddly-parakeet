@@ -19,7 +19,22 @@ export const createUserProfileDoc = async (userAuth, additionData) => {
 
   const snapShot = await userRef.get();
 
-  console.log(snapShot);
+  if (!snapShot.exists) {
+    // this whole snippet of code what does is that it make the data if the data is not present in the database
+    const { displayName, email } = userAuth;
+    const createAt = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createAt,
+        ...additionData
+      });
+    } catch (error) {
+      console.log('error creating user', error.message);
+    }
+  }
 };
 
 firebase.initializeApp(firebaseConfig); // this code will make for configurring the app
