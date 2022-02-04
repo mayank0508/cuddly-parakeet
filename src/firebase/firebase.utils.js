@@ -15,7 +15,7 @@ const firebaseConfig = {
 export const createUserProfileDoc = async (userAuth, additionData) => {
   if (!userAuth) return;
 
-  const userRef = firestore.doc('users/24526tfadgt1');
+  const userRef = firestore.doc(`user/${userAuth.uid}`); // this is a way to gather data form the firestore database
 
   const snapShot = await userRef.get();
 
