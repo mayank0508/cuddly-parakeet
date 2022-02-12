@@ -38,7 +38,8 @@ class SignUp extends React.Component {
 
       await createUserProfileDoc(user, { displayName }); // this will await till the user is made and everything is saved
 
-      this.setState = { // and after that the state will go back to this partical state
+      this.setState = {
+        // and after that the state will go back to this partical state
         displayName: '',
         email: '',
         password: '',
@@ -47,6 +48,12 @@ class SignUp extends React.Component {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({ [name]: value });
   };
 
   render() {
