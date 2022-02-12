@@ -26,6 +26,25 @@ class SignUp extends React.Component {
 
     if (password !== confirmPassword) {
       alert('Please enter a password the valid password');
+      return;
+    }
+
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      ); // this will take the pass and email and make an account
+
+      await createUserProfileDoc(user, { displayName });
+
+      this.setState = {
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+      };
+    } catch (error) {
+      console.error(error);
     }
   };
 
