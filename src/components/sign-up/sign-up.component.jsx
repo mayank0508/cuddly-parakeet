@@ -25,6 +25,7 @@ class SignUp extends React.Component {
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
+      // if password is correct or not !
       alert('Please enter a password the valid password');
       return;
     }
@@ -35,9 +36,9 @@ class SignUp extends React.Component {
         password
       ); // this will take the pass and email and make an account
 
-      await createUserProfileDoc(user, { displayName });
+      await createUserProfileDoc(user, { displayName }); // this will await till the user is made and everything is saved
 
-      this.setState = {
+      this.setState = { // and after that the state will go back to this partical state
         displayName: '',
         email: '',
         password: '',
