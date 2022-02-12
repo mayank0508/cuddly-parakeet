@@ -23,6 +23,10 @@ class SignUp extends React.Component {
     event.preventDefault(); // prevents default function
 
     const { displayName, email, password, confirmPassword } = this.state;
+
+    if (password !== confirmPassword) {
+      alert('Please enter a password the valid password');
+    }
   };
 
   render() {
