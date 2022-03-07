@@ -3,7 +3,7 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.componet';
 import './sign-in.styles.scss';
 
-import { signInWithGoogle } from '../../firebase/firebase.utils'; // this the module at which we setup the firebase docs
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils'; // this the module at which we setup the firebase docs
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -15,8 +15,17 @@ class SignIn extends React.Component {
     };
   }
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
+
+    const { email, password } = this.state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      this.setState({ email: '', password: '' });
+    } catch (err) {
+      console.error(err);
+    }
 
     this.setState({ email: '', password: '' });
   };
@@ -45,7 +54,7 @@ class SignIn extends React.Component {
           <FormInput
             name="password"
             type="password"
-            value={this.state.email} // here handleChange={this.handleChange} is that the moment the submit button is clicked what appears !
+            value={this.state.password} // here handleChange={this.handleChange} is that the moment the submit button is clicked what appears !
             handleChange={this.handleChange}
             label="Password" // this is the hover transition
             //required
