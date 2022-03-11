@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'; // this will wrap the whole app so that it can give the access to redux
 
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 
+import store from '.redux/store';
+
 ReactDOM.render(
   // this particular wrapping of {browserRouter} will make sure that the app has routing enabled
-  <Provider>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
